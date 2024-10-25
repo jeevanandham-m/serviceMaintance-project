@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email OTP Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* OTP Field - Initially hidden with opacity 0 */
+        .otp-field {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+        }
+
+        /* OTP Field becomes visible */
+        .otp-visible {
+            opacity: 1;
+            max-height: 100px; /* Enough space for input field */
+        }
+    </style>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // const emailValue = document.getElementById('email').value;
+            const otpField = document.getElementById('otp-field');
+
+            // Check if OTP field is already visible
+            if (!otpField.classList.contains('otp-visible')) {
+                otpField.classList.add('otp-visible'); // Add CSS class to reveal the field
+                // alert(`OTP has been sent to ${emailValue}`); // Simulate OTP sent message
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="form" onsubmit="handleSubmit(event)">
+            <input type="email" id="email" placeholder="Enter your email" required />
+            <button type="submit">Submit</button>
+
+            <!-- OTP field initially hidden -->
+            <div id="otp-field" class="otp-field">
+                <input type="number" id="otp" placeholder="Enter OTP" />
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

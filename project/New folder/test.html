@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login Page</h2>
+    <form id="loginForm">
+        <label for="userType">Select User Type:</label>
+        <select id="userType" name="userType" required>
+            <option value="" disabled selected>Select user type</option>
+            <option value="user">User</option>
+            <option value="hod">HOD</option>
+        </select>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the selected value from the dropdown
+            const userType = document.getElementById("userType").value;
+
+            // Redirect based on the selected user type
+            if (userType === "user") {
+                // Load user.html
+                window.location.href = "user.html";
+            } else if (userType === "hod") {
+                // If you have a different page for HOD, use that page's name here
+                window.location.href = "home.html";
+            } else {
+                alert("Please select a valid user type.");
+            }
+        });
+    </script>
+</body>
+</html>

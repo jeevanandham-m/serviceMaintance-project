@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: sans-serif;
+            position: relative;
+        }
+
+        .header {
+            height: 100px;
+            width: 100%;
+            background-color: #f0f0f0;
+            border-bottom: 2px solid grey;
+            box-shadow: 3px 3px 5px grey;
+            display: flex;
+            position: absolute;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+        .hed_h1 {
+            width: 40%;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 2px;
+
+            
+        }
+
+        .details {
+            display: flex;
+            align-items: center;
+            padding-right: 40px;
+        }
+
+        #user_name {
+            position: absolute;
+            right: 9%;
+        }
+
+        .logo_btn {
+            cursor: pointer;
+            border: none;
+            position: absolute;
+            left: 92%;
+
+        }
+
+        .logo_btn img {
+            border-radius: 10px;
+        }
+
+        .dropdown_menu {
+            display: none;
+            position: absolute;
+            top: 73px; 
+            right: 45px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .dropdown_menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown_menu li {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .dropdown_menu li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .details:hover .dropdown_menu {
+            display: block;
+        }
+
+
+        .content {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .issue {
+            height: 24%;
+            cursor: pointer;
+            background-color: gray;
+            border-radius: 8px;
+            width: 23%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 3px 3px 10px grey, -3px -3px 10px grey;
+        }
+
+        .issue:hover {
+            background-color: green;
+            transition: 0.3s;
+            letter-spacing: 3px;
+            height: 27%;
+            width: 25%;
+        }
+
+        .issue_btn {
+            border: none;
+            color: white;
+            text-decoration: none;
+            background: transparent;
+            font-size: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script>
+        // Function to show alert for profile
+        // function profile() {
+        //     alert("Profile clicked");
+        // }// have to change
+
+        // Set the user name dynamically if needed
+        window.onload = function () {
+            document.getElementById("user_name").innerText = "jeeva";// used to display the user name according to tyhe input 
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="hed_h1">SERVICE MAINTENANCE</h1>
+            <div class="details">
+                <h1 id="user_name">padmanathan</h1>
+                <button class="logo_btn">
+                    <img src="./image/login_icon.jpg" alt="logo icon" height="50px" width="50px">
+                </button>
+                <div class="dropdown_menu">
+                    <ul>
+                        <li onclick="profile()">Profile</li>
+                        <li onclick="location.href='home.html'">Logout</li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="issue"><a class="issue_btn" href="home.html">COMPLAINT</a></div>
+            <div class="issue"><a class="issue_btn" href="status.html">STATUS</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
